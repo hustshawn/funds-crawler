@@ -23,14 +23,15 @@ Run (Dev)
 docker-compose -f docker-compose.dev.yml up
 docker-compose -f docker-compose.dev.yml exec crawler bash run.sh
 ```
-- Fund documents
-By default, the fund documents is running with the docker compose, and it will collect the docs info once the basic funds are crawled from above step. Or you can just mannualy trigger it by step into the docker container and run it.
+- Fund documents   
+(By default, the fund documents is running with the docker compose, and it will collect the docs info once the basic funds are crawled from above step. Or you can just mannualy trigger it by step into the docker container and run it.)
 ```
 docker-compose -f docker-compose.dev.yml exec crawler bash
 python funds_crawler/docs.py
 ```
 
-- Chart Data
+- Chart Data  
+(The crawler for chart data is implemented with asyncio/uvloop/aiohttp.)
 ```
 docker-compose -f docker-compose.dev.yml exec crawler python funds_crawler/async_chart_data.py
 ```
@@ -145,4 +146,4 @@ Funds Output Data Structure (as of 2017/05/02)
 
 - Chart Data Output(Topic: `lion-funds.charts`)
 
-See: [chart_data.json](https://git.initiumlab.com/lion/funds-crawler/blob/master/chart_data.json)
+See: [chart_data.json](https://github.com/hustshawn/funds-crawler/blob/master/chart_data.json)
