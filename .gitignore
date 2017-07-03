@@ -1,0 +1,16 @@
+# Python itermediate files
+*.pyc
+__pycache__
+
+
+# temp output 
+result.json
+code_list.txt
+*.pdf
+*.log*
+
+producer.py
+consumer.py
+
+# Settings files
+docker-settings.yml

@@ -1,0 +1,15 @@
+version: '2'
+
+services:
+  crawler:
+    build: 
+      context: ./
+      dockerfile: docker/Dockerfile
+    volumes:
+      - ./src:/usr/src/app/
+      - ./logs:/usr/src/app/logs
+    command: python funds_crawler/docs.py
+    restart:  always
+    extends:
+      file: docker-settings.yml
+      service: app
